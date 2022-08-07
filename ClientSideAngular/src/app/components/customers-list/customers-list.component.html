@@ -1,0 +1,33 @@
+<div class="card my-5">
+  <div class="card-body">
+	<div class="search-hero">
+      <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  
+	  Start searching for a name or surname">
+    </div>
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">name</th>
+          <th scope="col">surname</th>
+          <th scope="col">birthDate</th>
+		  <th scope="col">telNumber</th>
+		  <th scope="col">email</th>
+        </tr>
+      </thead>
+      <tbody>
+	  <tr *ngFor="let customer of CustomersList.customerList | filter:searchText ; let i = index ">
+          <th scope="row">{{customer.id}}</th>
+          <td>{{customer.name}}</td>
+          <td>{{customer.surname}}</td>
+          <td>{{customer.birthDate}}</td>
+		  <td>{{customer.telNumber}}</td>
+		  <td>{{customer.email}}</td>
+		   <td class="text-center">
+            <button class="btn btn-sm btn-primary" routerLink="/customer-edit/{{customer.id}}">Edit</button>
+			<button class="btn btn-sm btn-danger" (click)="delete(customer.id, i)">Delete</button>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

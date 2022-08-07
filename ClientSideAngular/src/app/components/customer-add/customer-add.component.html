@@ -1,0 +1,34 @@
+<div class="row justify-content-center mt-5">
+  <div class="col-md-4">
+      <form [formGroup]="customerForm" (ngSubmit)="onSubmit()">
+		<div class="form-group">
+          <label>name</label>
+          <input class="form-control" type="text" formControlName="name" required>
+        </div>
+
+        <div class="form-group">
+          <label>surname</label>
+          <input class="form-control" type="text" formControlName="surname" required>
+        </div>
+		
+		<div class="form-group">
+          <label>birthDate</label>
+          <input class="form-control" type="text" formControlName="birthDate" required>
+        </div>
+		
+		<div class="form-group">
+          <label>telNumber</label>
+          <input class="form-control" type="text" formControlName="telNumber" required>
+        </div>
+
+        <div class="form-group">
+          <label>email</label>
+          <input class="form-control" type="text" formControlName="email" required>
+        </div>
+
+        <div class="form-group">
+          <button class="btn btn-primary btn-block" type="submit">Add Employee</button>
+        </div>
+      </form>
+  </div>
+</div>
